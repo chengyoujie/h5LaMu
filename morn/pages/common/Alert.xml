@@ -1,0 +1,8 @@
+<View width="350" height="200" sceneColor="0xcccccc" layers="1,1,0,0,第 1 层">
+  <Image skin="png.guidecomp.通用面板_2" x="0" y="0" layer="1" width="349" height="201" sizeGrid="160,40,160,40,1" var="bg"/>
+  <Label text="提示" styleSkin="png.comp.label" x="128" y="9" layer="1" width="97" height="18" align="center" color="0xccff00" stroke="0x0" var="txtTitle"/>
+  <Button label="取消" skin="png.guidecomp.btn_四字常规_1" x="190" y="152" layer="1" labelColors="0xc79a84,0xe0a98d,0x93827a" labelStroke="0x0" var="btnCancle"/>
+  <Button label="确定" skin="png.guidecomp.btn_四字常规_1" x="78" y="152" layer="1" labelColors="0xc79a84,0xe0a98d,0x93827a" labelStroke="0x0" var="btnOK"/>
+  <Button skin="png.guidecomp.btn_关闭_1" x="325" y="13" layer="1" var="btnClose"/>
+  <TextArea text="提示" skin="png.guidecomp.textarea" x="16" y="43" layer="1" vScrollBarSkin="png.guidecomp.vscroll" width="318" height="112" color="0xff6600" align="center" var="txtContent" isHtml="true" editable="false"/>
+</View>

@@ -1,0 +1,5 @@
+<View width="785" height="240" sceneColor="0xffffff" layers="1,1,0,0,第 1 层">
+  <Image skin="png.comp.blank" y="49" layer="1" sizeGrid="3,3,3,3,1" width="785" height="190" var="imgLaMuBg" x="0"/>
+  <Image skin="png.comp.image" x="630" layer="1" var="imgLaMuFace" y="-14"/>
+  <Label text="说话内容" styleSkin="png.comp.label" x="30" y="89" layer="1" width="599" height="138" color="0xffcc33" var="txtSay"/>
+</View>

@@ -1,0 +1,4 @@
+<View width="234" height="123" sceneColor="0xffffff" layers="1,1,0,0,第 1 层">
+  <Image skin="png.guidecomp.saypanel" x="0" y="0" layer="1" width="234" height="123" sizeGrid="110,70,35,70" var="bgSay"/>
+  <Label text="说话内容" styleSkin="png.comp.label" x="19" y="14" layer="1" width="190" height="68" var="txtSay" color="0xff6600" wordWrap="true" multiline="true"/>
+</View>

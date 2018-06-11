@@ -1,0 +1,36 @@
+<View width="350" height="800" sceneColor="0xffffff" layers="1,1,1,0,第 1 层;2,1,1,0,底图">
+  <Image skin="png.guidecomp.内框_圆角2" x="0" y="0" layer="2" width="350" height="800" sizeGrid="10,10,10,10,1"/>
+  <Box layers="1,1,0,0,第 1 层" layer="1" x="10" y="12" var="boxScene">
+    <Label text="资源名字：" styleSkin="png.comp.label" y="30" layer="1" color="0x996600"/>
+    <TextInput skin="png.guidecomp.textinput_文字输入底框_2" x="62" y="29" layer="1" color="0xff9900" width="160" height="23" sizeGrid="5,5,5,5,1" var="inputResName" multiline="true" wordWrap="true"/>
+    <ComboBox skin="png.guidecomp.combobox" x="62" layer="1" var="combResType" width="115" height="23" visibleNum="15" scrollBarSkin="png.guidecomp.vscroll" itemColors="0x262626,0xffe0ce,0xff861a,0x885202,0x3d3d3d" labelColors="0xf4a339,0xfedcaf,0xe0e0e0" labels="PAK,ANI" selectedIndex="0"/>
+    <Label text="资源类型：" styleSkin="png.comp.label" x="3" y="2" layer="1" color="0x996600" width="61" height="19"/>
+    <Label text="PST名字：" styleSkin="png.comp.label" x="1" y="57" layer="1" color="0x996600"/>
+    <TextInput skin="png.guidecomp.textinput_文字输入底框_2" x="62" y="56" layer="1" color="0xff9900" width="160" height="23" sizeGrid="5,5,5,5,1" var="inputPstName" multiline="true" wordWrap="true"/>
+    <Label text="动    作：" styleSkin="png.comp.label" x="12" y="88" layer="1" color="0x996600"/>
+    <Label text="位置：" styleSkin="png.comp.label" y="202" layer="1" color="0x996600"/>
+    <TextInput skin="png.guidecomp.textinput_文字输入底框_2" x="193" y="204" layer="1" color="0xff9900" width="83" height="23" sizeGrid="5,5,5,5,1" var="inputUnitPosY" multiline="true" wordWrap="true" text="0"/>
+    <ComboBox skin="png.guidecomp.combobox" x="62" y="87" layer="1" var="combUnitAction" width="115" height="23" visibleNum="15" scrollBarSkin="png.guidecomp.vscroll" itemColors="0x262626,0xffe0ce,0xff861a,0x885202,0x3d3d3d" labelColors="0xf4a339,0xfedcaf,0xe0e0e0" labels="待机,走路,死亡" selectedIndex="0"/>
+    <Label text="方    向：" styleSkin="png.comp.label" x="12" y="120" layer="1" color="0x996600"/>
+    <ComboBox skin="png.guidecomp.combobox" x="62" y="119" layer="1" var="combUnitDir" width="115" height="23" visibleNum="15" scrollBarSkin="png.guidecomp.vscroll" itemColors="0x262626,0xffe0ce,0xff861a,0x885202,0x3d3d3d" labelColors="0xf4a339,0xfedcaf,0xe0e0e0" labels="上,下,左,右" selectedIndex="0"/>
+    <CheckBox label="人物为中心点" skin="png.guidecomp.checkbox_单选" x="62" y="150" layer="1" labelColors="0xc79a84,0xe0a98d,0x93827a" labelStroke="0" var="checkCenterRole"/>
+    <Button label="创建" skin="png.guidecomp.btn_四字常规_1" x="66" y="350" layer="1" var="btnCreateUnit" labelColors="0xc79a84,0xe0a98d,0x93827a" labelStroke="0" sizeGrid="10,10,10,,10,1" width="74" height="39"/>
+    <Label text="中 心 点：" styleSkin="png.comp.label" x="6" y="160" layer="1" color="0x996600"/>
+    <CheckBox label="屏幕左上角为中心点" skin="png.guidecomp.checkbox_单选" x="62" y="176" layer="1" labelColors="0xc79a84,0xe0a98d,0x93827a" labelStroke="0" var="checkCenterScreen"/>
+    <Label text="Y:" styleSkin="png.comp.label" x="176" y="205" layer="1" color="0x996600"/>
+    <Label text="X:" styleSkin="png.comp.label" x="69" y="204" layer="1" color="0x996600"/>
+    <TextInput skin="png.guidecomp.textinput_文字输入底框_2" x="86" y="204" layer="1" color="0xff9900" width="81" height="23" sizeGrid="5,5,5,5,1" var="inputUnitPosX" multiline="true" wordWrap="true" text="0"/>
+    <Label text="移动至：" styleSkin="png.comp.label" x="1" y="235" layer="1" color="0x996600"/>
+    <TextInput skin="png.guidecomp.textinput_文字输入底框_2" x="194" y="237" layer="1" color="0xff9900" width="83" height="23" sizeGrid="5,5,5,5,1" var="inputUnitToY" multiline="true" wordWrap="true" text="0"/>
+    <Label text="Y:" styleSkin="png.comp.label" x="177" y="238" layer="1" color="0x996600"/>
+    <Label text="X:" styleSkin="png.comp.label" x="70" y="237" layer="1" color="0x996600"/>
+    <TextInput skin="png.guidecomp.textinput_文字输入底框_2" x="87" y="237" layer="1" color="0xff9900" width="81" height="23" sizeGrid="5,5,5,5,1" var="inputUnitToX" multiline="true" wordWrap="true" text="0"/>
+    <Label text="镜头移动至：" styleSkin="png.comp.label" y="296" layer="1" color="0x996600"/>
+    <TextInput skin="png.guidecomp.textinput_文字输入底框_2" x="196" y="296" layer="1" color="0xff9900" width="83" height="23" sizeGrid="5,5,5,5,1" var="inputCameraPosY" multiline="true" wordWrap="true" text="0"/>
+    <Label text="Y:" styleSkin="png.comp.label" x="179" y="297" layer="1" color="0x996600"/>
+    <Label text="X:" styleSkin="png.comp.label" x="72" y="296" layer="1" color="0x996600"/>
+    <TextInput skin="png.guidecomp.textinput_文字输入底框_2" x="89" y="296" layer="1" color="0xff9900" width="81" height="23" sizeGrid="5,5,5,5,1" var="inputCameraPosX" multiline="true" wordWrap="true" text="0"/>
+    <CheckBox label="使用当前镜头位置" skin="png.guidecomp.checkbox_单选" x="3" y="270" layer="1" labelColors="0xc79a84,0xe0a98d,0x93827a" labelStroke="0" var="checkCarmeraCur"/>
+    <Button label="删除" skin="png.guidecomp.btn_四字常规_1" x="150" y="348" layer="1" var="btnRemoveUnit" labelColors="0xc79a84,0xe0a98d,0x93827a" labelStroke="0" sizeGrid="10,10,10,,10,1" width="74" height="39"/>
+  </Box>
+</View>

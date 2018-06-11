@@ -1,0 +1,43 @@
+{
+	"data":
+	[
+		{"id":1, "name":"测试", "type":0, "value":"1", 
+			"steps":[
+				{	"unitInfo":[
+						{"name":"测试001", "ucloth":"m1", "upst":"m", "uweapon":"", "uwing":4, "umount":"", "say":"测试角色说", "face":3, "x":200, "y":300},
+						{"name":"测试002", "ucloth":"m4", "upst":"m", "uweapon":"", "uwing":4, "umount":"", "say":"测试角色显示", "face":5, "x":100, "y":100}
+					],
+					"mapId":"1000",
+					"name":"测试角色显示",
+					"id":1
+				},
+				{	"unitInfo":[
+						{"name":"测试002", "ucloth":"m4", "upst":"m", "uweapon":"", "uwing":4, "umount":"", "say":"测试场景移动", "face":5, "x":200, "y":200}
+					],
+					"mapId":"1000",
+					"cameraOper":1,
+					"camerax":500,
+					"cameray":600,
+					"cameraMoveTime":3000,
+					"name":"测试场景移动",
+					"id":2
+				},
+				{	"unitInfo":[
+						{"name":"测试003", "ucloth":"m5", "upst":"m", "uweapon":"", "uwing":4, "umount":"", "say":"测试角色动作", "face":5, "x":200, "y":200, "action":5}
+					],
+					"mapId":"1000",
+					"name":"测试角色动作",
+					"id":3
+				},
+				{	"unitInfo":[
+						{"name":"测试移动", "ucloth":"m5", "upst":"m", "uweapon":"", "uwing":4, "umount":"", "say":"测试角色移动", "face":2, "x":200, "y":200, "action":1, "tox":400, "toy":500, "moveTime":3000}
+					],
+					"mapId":"1000",
+					"name":"测试角色移动",
+					"id":4
+				}
+			]
+		}
+	],
+"version":1
+}

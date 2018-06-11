@@ -1,0 +1,5 @@
+<View sceneColor="0xcccccc" layers="6,1,0,0,第 6 层;5,1,0,0,场景对话层;1,1,0,0,半身像及对话" width="805" height="727">
+  <Image skin="png.guidecomp.内框_圆角2" x="0" y="0" layer="1" width="805" height="727" sizeGrid="10,10,10,10,1" var="imgPreViewBg"/>
+  <UIView source="laMuUI/LMMapView.xml" x="0" y="0" layer="5" var="uiMapView" runtime="com.cyj.app.view.modules.LMMapView"/>
+  <UIView source="laMuUI/LMLaMuView.xml" x="0" y="471" layer="6" var="uiLaMuView" runtime="com.cyj.app.view.modules.LMLaMuView" mouseChildren="false" mouseEnabled="false"/>
+</View>

@@ -1,0 +1,15 @@
+<toolsconfig 
+title="H5拉幕工具@cyj"
+appName="H5拉幕工具"
+
+version="1.0.4"
+
+
+
+logpath="$apppath/res/log/log.txt"
+
+
+projectpath="file:////192.168.2.50/ftp/tool/remotdata/h5lamu/projects.config"
+versionconfig="file:////192.168.2.50/ftp/tool/remotdata/h5lamu/version.ver"
+
+/>

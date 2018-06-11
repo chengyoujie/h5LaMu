@@ -1,0 +1,44 @@
+<View sceneColor="0xcccccc" layers="5,1,0,0,地图信息;4,1,0,0,场景对话人物列表;3,1,0,0,动作列表;2,1,0,0,第 2 层;1,1,0,0,第 1 层" width="1540" height="800">
+  <Button label="增加" skin="png.guidecomp.btn_四字常规_1" x="20" y="18" layer="1" var="btnAddItem" labelColors="0xc79a84,0xe0a98d,0x93827a" labelStroke="0" sizeGrid="10,10,10,,10,1" width="74" height="39"/>
+  <Button label="删除" skin="png.guidecomp.btn_四字常规_1" x="97" y="18" layer="1" var="btnRemoveItem" labelColors="0xc79a84,0xe0a98d,0x93827a" labelStroke="0" sizeGrid="10,10,10,,10,1" width="74" height="39"/>
+  <List layers="1,1,0,0,第 1 层" layer="1" x="2" y="56" vScrollBarSkin="png.guidecomp.vscroll" repeatY="8" width="387" height="445" var="listNd">
+    <UIView source="laMuUI/LMListItem.xml" layer="1" name="render" runtime="com.cyj.app.view.modules.LMItem"/>
+  </List>
+  <UIView source="laMuUI/LMPreView.xml" x="387" y="55" layer="1" runtime="com.cyj.app.view.modules.LMPreView" var="ndPreView"/>
+  <Label text="made by cyj 2018.05.10" styleSkin="png.comp.label" x="1057" y="781" layer="1" color="0x666666" var="txtAuth"/>
+  <Label text="NPC对话配置工具" styleSkin="png.comp.label" x="244" y="8" layer="1" color="0xff9900" size="24" stroke="0" width="948" height="43" align="center" var="txtAppName"/>
+  <Box layers="1,1,0,0,第 1 层" layer="1" x="829" y="21" var="boxAppOper" height="28" width="360">
+    <Button label="打开游戏q" skin="png.guidecomp.btn_小按钮_1" layer="1" labelColors="0xc79a84,0xe0a98d,0x93827a" var="btnOpenGame" labelStroke="0" width="63" height="28" x="245" y="-1"/>
+    <Button label="发布w" skin="png.guidecomp.btn_小按钮_1" x="199" layer="1" labelColors="0xc79a84,0xe0a98d,0x93827a" var="btnPulish" labelStroke="0" width="43" height="28" y="-1"/>
+    <ComboBox skin="png.guidecomp.combobox" layer="1" width="115" height="23" visibleNum="15" scrollBarSkin="png.guidecomp.vscroll" itemColors="0x262626,0xffe0ce,0xff861a,0x885202,0x3d3d3d" labelColors="0xf4a339,0xfedcaf,0xe0e0e0" selectedIndex="0" y="3" x="33" var="combProjectList"/>
+    <Label text="项目列表" styleSkin="png.comp.label" y="5" layer="1" color="0xffff00" x="-25"/>
+    <Button label="保存s" skin="png.guidecomp.btn_小按钮_1" x="152" layer="1" labelColors="0xc79a84,0xe0a98d,0x93827a" var="btnSave" labelStroke="0" width="43" height="28" y="-1"/>
+    <Button label="更新" skin="png.guidecomp.btn_小按钮_1" x="311" layer="1" labelColors="0xc79a84,0xe0a98d,0x93827a" labelStroke="0" width="43" height="28" y="-1" var="btnLoadNew"/>
+  </Box>
+  <Label text="made by cyj 2016.05.10" styleSkin="png.comp.label" x="1" y="783" layer="1" color="0xff3366" var="txtLog" width="1000" height="18"/>
+  <Button skin="png.guidecomp.btn_滚动条_上_1" x="177" y="21" layer="1" var="btnItemIndexUp" width="32" height="32"/>
+  <Button skin="png.guidecomp.btn_滚动条_下_1" x="211" y="21" layer="1" var="btnItemIndexDown" width="32" height="32"/>
+  <Box layers="1,1,0,0,第 1 层" layer="3" x="7" y="501" var="boxStepList">
+    <Image skin="png.guidecomp.购买类控件底_1" layer="1" sizeGrid="10,10,10,10,1" width="182" height="279" x="0" y="0" var="imgStepListBg"/>
+    <Button skin="png.guidecomp.btn_加号_1" x="2" y="21" layer="1" var="btnAddStep"/>
+    <Button skin="png.guidecomp.btn_减号_1" x="27" y="21" layer="1" var="btnReomveStep"/>
+    <List layers="1,1,0,0,第 1 层" layer="1" x="9" y="44" repeatY="9" var="listStep" vScrollBarSkin="png.guidecomp.vscroll" width="164" height="232">
+      <UIView source="laMuUI/ComListItem.xml" x="0" y="0" layer="1" name="render" runtime="com.cyj.app.view.modules.LaMuComItem"/>
+    </List>
+    <Label text="步骤列表" styleSkin="png.comp.label" x="6" y="3" layer="1" color="0x33ffcc" stroke="0" width="139" height="18" align="center"/>
+    <Button skin="png.guidecomp.btn_滚动条_上_1" x="55" y="23" layer="1" var="btnStepIndexUp"/>
+    <Button skin="png.guidecomp.btn_滚动条_下_1" x="77" y="23" layer="1" var="btnStepIndexDown"/>
+  </Box>
+  <UIView source="laMuUI/LMContain.xml" x="1193" y="0" layer="3" runtime="com.cyj.app.view.modules.LMContain" var="ndContian"/>
+  <Box layers="4,1,1,0,标题;3,1,1,0,隐藏于显示;1,1,1,0,列表;2,1,1,0,背景" layer="4" x="193" y="501" var="boxUnitList" mouseEnabled="false">
+    <Image skin="png.guidecomp.购买类控件底_1" layer="2" sizeGrid="10,10,10,10,1" width="175" height="279" var="imgUnitListBg" x="0" y="0"/>
+    <Button skin="png.guidecomp.btn_减号_1" x="31" layer="1" var="btnReomveUnit" y="23"/>
+    <List layers="1,1,0,0,第 1 层" layer="1" y="45" repeatY="9" var="listUnit" vScrollBarSkin="png.guidecomp.vscroll" width="166" height="228" x="5" mouseEnabled="false">
+      <UIView source="laMuUI/ComListItem.xml" x="0" y="0" layer="1" name="render" runtime="com.cyj.app.view.modules.LaMuComItem"/>
+    </List>
+    <Button skin="png.guidecomp.btn_加号_1" x="5" y="23" layer="1" var="btnAddUnit"/>
+    <Label text="地图单元" styleSkin="png.comp.label" x="8" y="3" layer="4" color="0x33ffcc" stroke="0" width="140" height="18" align="center"/>
+    <Button skin="png.guidecomp.btn_滚动条_上_1" x="65" y="23" layer="4" var="btnUnitCengUp"/>
+    <Button skin="png.guidecomp.btn_滚动条_下_1" x="90" y="23" layer="4" var="btnUnitCengDown"/>
+  </Box>
+</View>
