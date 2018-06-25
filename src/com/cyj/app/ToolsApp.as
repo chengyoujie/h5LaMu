@@ -5,6 +5,7 @@ package com.cyj.app
 	import com.cyj.app.config.ToolsConfig;
 	import com.cyj.app.data.ProjectData;
 	import com.cyj.app.data.lamu.LaMuData;
+	import com.cyj.app.utils.ConfigParserUtils;
 	import com.cyj.app.view.AppView;
 	import com.cyj.app.view.common.Alert;
 	import com.cyj.app.view.ui.common.AlertUI;
@@ -31,6 +32,7 @@ package com.cyj.app
 	import flash.events.NativeDragEvent;
 	import flash.filesystem.File;
 	import flash.geom.Point;
+	import flash.utils.ByteArray;
 	import flash.utils.Dictionary;
 	
 	import morn.core.components.CheckBox;
@@ -78,8 +80,103 @@ package com.cyj.app
 			
 			BLOCK_AVATER = App.asset.getBitmapData(BLOCK_AVATER_URL);
 			
+			
+			//比对配置
+//			var file:File = new File("\\\\192.168.2.50\\h5_hqg2\\cfgs\\cn\\cfgs\\client\\cfgs.bin");
+//			loader.loadSingleRes(file.url, ResLoader.BYT, handleData1);
+//				
+//			return;//test
+			
 			loader.loadSingleRes("res/config.xml", ResLoader.TXT, handleConfigLoaded, null, handleLoadError);
 		}
+		
+		
+		//test
+//		private static var data1:ByteArray;//花千骨
+//		private static var data2:ByteArray;//观海策
+//		private static function handleData1(res:ResData):void
+//		{
+//			data1 = res.data;
+//			var file:File = new File("\\\\192.168.2.50\\h5_ghc\\cfgs\\cn\\cfgs\\client\\cfgs.bin");
+//			loader.loadSingleRes(file.url, ResLoader.BYT, handleData2);
+//		}
+//		private static function handleData2(res:ResData):void
+//		{
+//			data2 = res.data;
+//			
+//			var biao:String = "";
+//			
+//			ConfigParserUtils.parser(data1, 2);
+//			var hua:Object = {};
+//			hua = ObjectUtils.cloneDepthObject(ConfigParserUtils.cfgData);
+//			
+//			
+//			ConfigParserUtils.parser(data2);
+//			var guan:Object = {};
+//			guan = ObjectUtils.cloneDepthObject(ConfigParserUtils.cfgData);
+//			
+//			var finded:Dictionary = new Dictionary();
+//			for(var key in hua)
+//			{
+//				if(!finded[key])
+//					finded[key] = true;
+//				if(guan[key])
+//				{
+//					var alt:String = "============"+key+"===========\n";
+//					var hcfg:Object = hua[key];
+//					var gcfg:Object = guan[key];
+//					var hkeylist:Array = [];
+//					var gkeylist:Array = [];
+//					for(var porp in hcfg)
+//					{
+//						for(var p1 in hcfg[porp])
+//						{
+//							if(hkeylist.indexOf(p1)==-1)
+//								hkeylist.push(p1);
+//						}
+//					}
+//					
+//					for(var porp in gcfg)
+//					{
+//						for(var p1 in gcfg[porp])
+//						{
+//							if(gkeylist.indexOf(p1)==-1)
+//								gkeylist.push(p1);
+//						}
+//					}
+//					
+//					//比较表的字段
+//					var msg:String="";
+//					for(var i:int=0; i<hkeylist.length; i++)
+//					{
+//						if(gkeylist.indexOf(hkeylist[i]) == -1)
+//						{
+//							msg += "花千骨有的字段  观海策没："+hkeylist[i]+"\n";
+//						}
+//					}
+//					for(var i:int=0; i<gkeylist.length; i++)
+//					{
+//						if(hkeylist.indexOf(gkeylist[i]) == -1)
+//						{
+//							msg += "观海策有的字段  花千骨没："+gkeylist[i]+"\n";
+//						}
+//					}
+//					if(msg)
+//						trace(alt+msg);
+//					
+//				}else{
+//					biao += "花千骨中有  观海策中没的表："+key+"\n";
+//				}
+//			}
+//			
+//			for(var key2 in guan)
+//			{
+//				if(!finded[key])
+//					biao += "观海策 有  发现花千骨没有的表："+key2+"\n";
+//			}
+//			trace("++++++++++表对比+++++++++");
+//			trace(biao);
+//		}
 		
 		
 		private static function handleConfigLoaded(res:ResData):void
@@ -94,7 +191,7 @@ package com.cyj.app
 				CMDManager.startCmd();
 				CMDManager.addParser(new CMDStringParser(), handleCmdResult);
 				
-				CMDManager.runStringCmd("net use \\\\192.168.2.61 jie123456 /user:1137815160@qq.com");
+				CMDManager.runStringCmd("net use \\\\192.168.2.50 1 /user:1");
 			}catch(e:*){
 //				Alert.show("当前不支持CMD命令行\n"+e);
 			}

@@ -3,7 +3,7 @@ package com.cyj.app.data.lamu
 	public class LaMuItemData
 	{
 		public var id:int;
-		public var name:String;
+		public var name:String;//编辑器中  
 		public var type:int;
 		public var value:*;
 		public var steps:Vector.<LaMuStepData> = new Vector.<LaMuStepData>();

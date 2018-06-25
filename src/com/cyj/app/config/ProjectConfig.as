@@ -21,6 +21,8 @@ package com.cyj.app.config
 		public var mainroleindex:int;
 		public var mainface:String;
 		public var facepath:String;
+		public var filename:String;
+		public var jsonpublishto:String;
 		
 		
 		public var baseurl:String;

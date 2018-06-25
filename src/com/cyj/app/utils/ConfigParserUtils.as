@@ -19,12 +19,17 @@ package com.cyj.app.utils
 		}
 		
 		
-		public static function parser(byte:ByteArray):void
+		public static function parser(byte:ByteArray, type:int=1):void
 		{
 			_cfgs = ConfigParserUtils.decodePakCfgs(byte);
 			_mapinfos = ConfigParserUtils.mapCfgParser(_cfgs["maps"]);
 			//			var ditu:Object = Utils.readCfg(cfgs["DiTu"]);
-			ConfigParserUtils.parserAllCfg(_cfgs);
+			if(type == 1)
+			{
+				ConfigParserUtils.parserAllCfg(_cfgs);
+			}else{
+				ConfigParserUtils.parser2AllCfg(_cfgs);
+			}
 		}
 		
 		public static function get mapInfos():Object
@@ -223,6 +228,100 @@ package com.cyj.app.utils
 			return _result;
 		}
 		
+		private static function parser2AllCfg(cfgs:Object):Object
+		{
+			_result ={};
+			readCfg(cfgs, "GongNeng", "GongNengCfg");
+			readCfg(cfgs, "DiTu", "DiTuCfg");
+			readCfg(cfgs, "DaoJu", "DaoJuCfg", 0);
+			readCfg(cfgs, "ZhuangBei", "ZhuangBeiCfg", 0);
+			readCfg(cfgs, "Bag", "BagCfg");
+			readCfg(cfgs, "ShangHai", "ShangHaiCfg", 0);
+			readCfg(cfgs, "JiNengXiaoGuo", "JiNengXiaoGuoCfg", 0);
+			readCfg(cfgs, "JiNeng", "JiNengCfg");
+			readCfg(cfgs, "JueSe", 0);
+			readCfg(cfgs, "TeXiao", 0);
+			readCfg(cfgs, "PinZhi", 0, "rare");
+			readCfg(cfgs, "Vip", 0, 0);
+			readCfg(cfgs, "Cd", 0);
+			readCfg(cfgs, "ItemType", 0, "type");
+			readCfg(cfgs, "YaoShen", 0);
+			readCfg(cfgs, "GuanKa", 0, "id", 1);
+			readCfg(cfgs, "YaoShenBuWei", 0);
+			readCfg(cfgs, "YaoShenHuoDe", 0, "huashenid");
+			readCfg(cfgs, "YaoShenShengXing", 0);
+			readCfg(cfgs, "MoWenWaiXian", "MoWenWaiXianCfg");
+			readCfg(cfgs, "QiRi", 0, "id", 1);
+			readCfg(cfgs, "JingYan", 0, "level");
+			readCfg(cfgs, "ShenQiJiHuo", 0, "type");
+			readCfg(cfgs, "FeiSheng", "FeiShengCfg");
+			readCfg(cfgs, "ChengHaoBiao", 0, "id", 1);
+			readCfg(cfgs, "Npc", 0);
+			readCfg(cfgs, "QianDao", 0, "id", 1);
+			readCfg(cfgs, "ChengZhangJiJin", 0, "id", 1);
+			readCfg(cfgs, "SiXiangInfo", 0, "id", 1);
+			readCfg(cfgs, "ShangDian", 0, "id", 1);
+			readCfg(cfgs, "YeQian", 0, "modelid", 1);
+			readCfg(cfgs, "ChengJiuYe", 0, "type");
+			readCfg(cfgs, "ChengJiuKai", 0, 0);
+			readCfg(cfgs, "ChengJiuRenWu", 0, "order");
+			readCfg(cfgs, "JingJiChang", 0);
+			readCfg(cfgs, "JingJiPaiMing", 0, 0);
+			readCfg(cfgs, "ChiBangJinJie", 0);
+			readCfg(cfgs, "ChiBangWaiXian", 0);
+			readCfg(cfgs, "LingYu", 0, "type");
+			readCfg(cfgs, "ChongWuBiao", 0, "id", 1);
+			readCfg(cfgs, "MenPai", 0, "level");
+			readCfg(cfgs, "QuanXian", 0);
+			readCfg(cfgs, "ZhanQi", 0, "level");
+			readCfg(cfgs, "JuanXian", 0, 0);
+			readCfg(cfgs, "CaiLiaoFuBen", 0);
+			readCfg(cfgs, "CaiLiaoFuBenXinXi", 0);
+			readCfg(cfgs, "VipKa", 0, "id", 1);
+			readCfg(cfgs, "ChongZhi", 0);
+			readCfg(cfgs, "FeiJian", 0, "id", 1);
+			readCfg(cfgs, "JuQing", 0, 0);
+			readCfg(cfgs, "YYHDGongNeng", 0, "module");
+			readCfg(cfgs, "QiShaDengJi", 0);
+			readCfg(cfgs, "QiShaPingJia", 0, 0);
+			readCfg(cfgs, "QiShaLaiXi", 0, 0);
+			readCfg(cfgs, "QiShaGouMai", 0, "times");
+			readCfg(cfgs, "GuWuBiao", 0, 0);
+			readCfg(cfgs, "HuoYue", "HuoYueCfg");
+			readCfg(cfgs, "RiChang", 0);
+			readCfg(cfgs, "ChongZhiShangCheng", 0, "id", 1);
+			readCfg(cfgs, "FanLi", 0, "id1", 1);
+			readCfg(cfgs, "DuoXuan", 0);
+			readCfg(cfgs, "TuJing", "TuJingCfg");
+			readCfg(cfgs, "JianGeGouMai", 0, "times");
+			readCfg(cfgs, "TengTaTianJie", 0);
+			readCfg(cfgs, "TianJieGouMai", 0, "times");
+			readCfg(cfgs, "BossZhiJia", 0, "id", 1);
+			readCfg(cfgs, "PaiHang", 0);
+			readCfg(cfgs, "MuBiao", 0);
+			readCfg(cfgs, "JianGePingJia", 0, 0);
+			readCfg(cfgs, "YaoShenPaiMing", 0, "id", 1);
+			readCfg(cfgs, "ZhongLiBoss", 0, "id", 1);
+			readCfg(cfgs, "GongNengYuGao", 0, "id", 1);
+			readCfg(cfgs, "TuiGuang", 0, "type");
+			readCfg(cfgs, "ShengWangJL", 0, "id", 1);
+			readCfg(cfgs, "MenPaiRW", 0, "id", 1);
+			readCfg(cfgs, "PVP", 0, 0);
+			readCfg(cfgs, "ShengWang", "ShengWangCfg", "level", 1);
+			readCfg(cfgs, "TianTiGouMai", 0, 0);
+			readCfg(cfgs, "TianTi", 0, "id", 1);
+			readCfg(cfgs, "XunBaoYe", 0, 0);
+			readCfg(cfgs, "TianTiMeiRi", 0, 0);
+			readCfg(cfgs, "ShouChong", 0);
+			readCfg(cfgs, "FeiShengLevel", 0);
+			readCfg(cfgs, "ChengJiuJie", 0, "id", 1);
+			readCfg(cfgs, "FenXiang", 0);
+			readCfg(cfgs, "BaMen", 0, "id", 1);
+			readCfg(cfgs, "ZhaoHui", 0, "type", 1);
+			readCfg(cfgs, "YinDao", 0);
+			return _result;
+		}
+		
 		private static function parserAllCfg(cfgs:Object):Object
 		{
 			_result ={};
@@ -301,6 +400,9 @@ package com.cyj.app.utils
 			readCfg(cfgs,"TuiGuang", 0, "type");
 			return _result;
 		}
+		
+		
+		
 		
 		
 		private static function getJSONValue(value, type, def) {

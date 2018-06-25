@@ -604,10 +604,13 @@ package com.cyj.app.view
 			}
 		}
 		
+		private var _isPublishing:Boolean = false;
 		private function newpublish():void
 		{
 			var f:File = new File(ToolsApp.curPorjectConfig.bindata);
 			if(f.exists==false){Alert.show("请通知 程有杰 检查路径配置是否正确  bindata"+ToolsApp.curPorjectConfig.bindata);return;};
+			if(_isPublishing){Alert.show("当前正在发布中， 不要急。。。等会再发布");return;};
+			_isPublishing = true;
 			ToolsApp.loader.loadSingleRes(f.url, ResLoader.BYT, handleLoadedNewCfg, null, null, null, false);
 		}
 		
@@ -615,13 +618,85 @@ package com.cyj.app.view
 		{
 			var byte:ByteArray = res.data;
 			var str:String= JSON.stringify(ToolsApp.curProjectData.curLaMu);
-			var testByte:ByteArray = ConfigParserUtils.writeStroy(byte, str);
+			var thinData = thinData(str);
+			var testByte:ByteArray = ConfigParserUtils.writeStroy(byte, thinData);
 			testByte.position = 0;
 //			ConfigParserUtils.parser(testByte);
 			ToolsApp.file.saveByteFile(ToolsApp.curPorjectConfig.bindata, testByte);
 			//检查是否相同
-			CMDManager.runStringCmd("copy /y "+ToolsApp.curPorjectConfig.path.replace(/\//gi, "\\") +" "+ToolsApp.curPorjectConfig.jsoncopyto);
+			ToolsApp.file.saveFile(ToolsApp.curPorjectConfig.jsonpublishto, thinData);//写到  raw/client/中
+			ToolsApp.file.saveFile(ToolsApp.curPorjectConfig.jsoncopyto, str);//写到 raw/story/中
+//			CMDManager.runStringCmd("copy /y "+ToolsApp.curPorjectConfig.path.replace(/\//gi, "\\") +" "+ToolsApp.curPorjectConfig.jsoncopyto);
 			Alert.show("上传完毕");
+			_isPublishing = false;
+		}
+		
+		
+		/**
+		 *精简不必要的数据   能从415k缩减到171k 
+		 * @param jsonstr
+		 * @return 
+		 * 
+		 */		
+		private function thinData(jsonstr:String):String
+		{
+			var obj:Object = JSON.parse(jsonstr);
+			var ladata:Object = obj.data;
+			if(ladata)
+			{
+				for(var item:String in ladata)
+				{
+					var idata:Object = ladata[item];
+					delete idata["name"];//编辑器中用到的字段	
+					var steps:Object = idata.steps;
+					if(steps)
+					{
+						for(var key:String in steps)
+						{
+							var step:Object = steps[key];
+							delete step["centerMapX"];//编辑器中用到的字段
+							delete step["centerMapY"];//编辑器中用到的字段
+							delete step["name"];//编辑器中用到的字段
+							var unit:Object = steps[key].unitInfo;
+							if(unit)
+							{
+								for(var u:String in unit)
+								{
+									var udata:Object=unit[u];
+									if(udata)
+									{
+										if(!udata.say)
+										{
+											delete udata["name"];//如果不说话这个字段也无用
+										}else{
+											if(udata.name)udata.name = udata.name.replace(/\$/gi, "");
+										}
+										delete udata["resParam"];//编辑器中用到的字段
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			thinNoData(obj);
+			return JSON.stringify(obj);
+		}
+		
+		private function thinNoData(obj:Object):Object
+		{
+			for(var key:String in obj)
+			{
+				if(!obj[key] )
+				{
+					delete obj[key];
+				}else if(obj[key] is Number || obj[key] is String || obj[key] is Boolean){
+					
+				}else{
+					thinNoData(obj[key]);
+				}
+			}
+			return obj;
 		}
 		
 	}

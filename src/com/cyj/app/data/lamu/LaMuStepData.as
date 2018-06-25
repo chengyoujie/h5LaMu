@@ -15,7 +15,7 @@ package com.cyj.app.data.lamu
 		public var camerax:int;
 		public var cameray:int;
 		public var cameraMoveTime:int;
-		public var name:String;
+		public var name:String;//编辑器用   步骤的名字
 		//场景对话剧情相关
 		public var unitInfo:Vector.<LaMuUnitData> = new Vector.<LaMuUnitData>();
 		
