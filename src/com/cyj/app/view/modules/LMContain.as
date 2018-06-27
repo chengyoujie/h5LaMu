@@ -45,6 +45,7 @@ package com.cyj.app.view.modules
 			_bindStepList.push(new BindData(inputCameraPosY, "cameray"));
 			_bindStepList.push(new BindData(inputCameraMoveTime, "cameraMoveTime"));
 			_bindStepList.push(new BindData(inputEndCondition, "endParam"));
+			_bindStepList.push(new BindData(inputStepEndEvent, "stepEndEvent"));
 			_bindStepList.push(new BindData(checkUnitShowBorder, "showBorder", "selected"));
 			_bindStepList.push(new BindData(checkUnitShowUI, "showUI", "selected"));
 			_bindStepList.push(new BindData(checkUnitShowOther, "showOther", "selected"));
@@ -301,7 +302,7 @@ package com.cyj.app.view.modules
 			boxUnitRes.visible= (index==LaMuUnitData.RES_TYPE_ANI || index==LaMuUnitData.RES_TYPE_PAK || index == LaMuUnitData.RES_TYPE_OTHER);
 			boxUnitPst.visible = (index==LaMuUnitData.RES_TYPE_PAK|| index == LaMuUnitData.RES_TYPE_OTHER);
 			boxUnitActionDir.visible = index!=LaMuUnitData.RES_TYPE_ANI;
-			boxUnitRole.visible = index==LaMuUnitData.RES_TYPE_ROLE;
+			boxUnitRole.visible = index==LaMuUnitData.RES_TYPE_ROLE||index == LaMuUnitData.RES_TYPE_PAK||index == LaMuUnitData.RES_TYPE_MONSTER;
 			if(ToolsApp.curProjectData && ToolsApp.curProjectData.curLaMuUnit)
 			{
 				ToolsApp.curProjectData.curLaMuUnit.resType = index;

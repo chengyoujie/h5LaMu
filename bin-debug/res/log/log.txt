@@ -1,11 +1,16 @@
 [记录]Microsoft Windows [版本 10.0.14393]
 (c) 2016 Microsoft Corporation。保留所有权利。
 
-E:\Soft\FlashBuilder4.6\install\Adobe Flash Builder 4.6>net use \\192.168.2.61 jie123456 /user:1137815160@qq.com
+E:\Soft\FlashBuilder4.6\install\Adobe Flash Builder 4.6>net use \\192.168.2.50 1 /user:1
 命令成功完成。
 
 
 E:\Soft\FlashBuilder4.6\install\Adobe Flash Builder 4.6>
 [记录]系统启动成功
-[记录]上传完毕
+[记录]<font color='#FF0000'>当前版本<font color='#00FF00'>1.0.6</font>最新版本:<font color='#00FF00'>1.0.5</font></font>
+<p align='left'><font color='#FFFF00'>更新内容</font>
+优化文件体积，把文件大小415k优化到171k.
+更改本机及远程存储数据目录
+增加raw/story 存储完整数据  raw/client 存储优化后的数据</p>
+[记录]本地配置与远程配置不同， 是否使更新至最新?  慎重操作 
 [记录]退出系统

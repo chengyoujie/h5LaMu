@@ -36,6 +36,8 @@ package com.cyj.app.data.lamu
 		public var showBorder:Boolean = false;
 		public var showUI:Boolean = false;
 		public var showOther:Boolean = false;
+		public var stepEndEvent:String;
+		
 		public var centerMapX:int;//编辑器用   当前显示的中心点坐标X（地图坐标)
 		public var centerMapY:int;//编辑器用   当前显示的中心点坐标Y（地图坐标)
 		
