@@ -34,6 +34,7 @@ package com.cyj.app.view.modules
 			combType.selectHandler = new Handler(handleTypeChange);	
 			handleTypeChange(combType.selectedIndex);
 			combTask.selectHandler = new Handler(handleTaskChange);
+			combGuanKa.selectHandler = new Handler(handleGuanKaChange);
 		}
 		
 		override public function set dataSource(value:Object):void
@@ -49,6 +50,7 @@ package com.cyj.app.view.modules
 				_bindList[i].initData();
 			}
 			combTask.dataSource = ToolsApp.curProjectData.taskDataSource;
+			combGuanKa.dataSouceExt = ToolsApp.curProjectData.guanKaData;
 			combType.selectedIndexFoce = _data.type;
 //			combTask.selectedIndexFoce = _data.
 //			handleTypeChange(combType.selectedIndex);
@@ -63,6 +65,7 @@ package com.cyj.app.view.modules
 			boxTask.visible = index == LaMuItemData.TYPE_TASK;
 			boxLevel.visible = index==LaMuItemData.TYPE_LEVEL;
 			boxEvent.visible = index == LaMuItemData.TYPE_EVENT;
+			boxGuanKa.visible = index == LaMuItemData.TYPE_GUANKA;
 			if(_data)
 			{
 				if(boxTask.visible)
@@ -75,6 +78,9 @@ package com.cyj.app.view.modules
 				}else if(boxEvent.visible)
 				{
 					inputEvent.text = _data.value;
+				}else if(boxGuanKa.visible)
+				{
+					combGuanKa.selectedIndex = combGuanKa.getIndexById(_data.value);
 				}
 				_data.type = index;
 			}
@@ -88,6 +94,12 @@ package com.cyj.app.view.modules
 			_data.value =  ToolsApp.curProjectData.getTaskIdByIndex(index);
 		}
 		
+		private function handleGuanKaChange(index:int):void
+		{
+			if(_data == null)return;
+			if(index<0)return;
+			_data.value =  combGuanKa.getIdByIndex(index);
+		}
 		
 		override public function dispose():void
 		{

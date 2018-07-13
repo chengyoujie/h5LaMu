@@ -138,6 +138,11 @@ package com.cyj.app.data
 			return getDes(des, arr);
 		}
 		
+		public function get guanKaData():Object
+		{
+			return cfgs["GuanKa"];
+		}
+		
 		
 		private function getDes(des:String, arr:Array):String
 		{

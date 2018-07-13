@@ -12,6 +12,7 @@ package com.cyj.app.data.lamu
 		public static const TYPE_TASK:int =  0;
 		public static const TYPE_LEVEL:int = 1;
 		public static const TYPE_EVENT:int = 2;
+		public static const TYPE_GUANKA:int = 3;
 		
 		public static const TASK_ACCEPT:int = 0;
 		public static const TASK_PROGRESS:int = 1;
