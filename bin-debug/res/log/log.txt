@@ -8,5 +8,4 @@ E:\Soft\FlashBuilder4.6\install\Adobe Flash Builder 4.6>net use \\192.168.2.50 1
 E:\Soft\FlashBuilder4.6\install\Adobe Flash Builder 4.6>
 [记录]系统启动成功
 [记录]本地配置与远程配置不同， 是否使更新至最新?  慎重操作 
-[记录]当前选择了  项2-
 [记录]退出系统

@@ -15,6 +15,7 @@ package com.cyj.app.view.ui.laMuUI {
 		public var inputName:TextInput = null;
 		public var boxGuanKa:Box = null;
 		public var combGuanKa:ComboBox = null;
+		public var combGuanKaState:ComboBox = null;
 		protected static var uiXML:XML =
 			<View width="365" height="110">
 			  <Image skin="png.guidecomp.内框_圆角2" width="365" height="110" sizeGrid="10,10,10,10,1" x="0" y="0"/>
@@ -37,7 +38,8 @@ package com.cyj.app.view.ui.laMuUI {
 			  <TextInput skin="png.guidecomp.textinput_文字输入底框_2" x="148" y="17" color="0xff9900" width="137" height="23" sizeGrid="5,5,5,5,1" var="inputName" multiline="false" wordWrap="false"/>
 			  <Clip skin="png.guidecomp.clip_格子选中" x="0" y="0" width="366" height="109" sizeGrid="10,10,10,10,1" name="selectBox" mouseEnabled="false"/>
 			  <Box x="143" y="51" var="boxGuanKa">
-			    <ComboBox skin="png.guidecomp.combobox" var="combGuanKa" width="161" height="23" scrollBarSkin="png.guidecomp.vscroll" visibleNum="15" itemColors="0x262626,0xffe0ce,0xff861a,0x885202,0x3d3d3d" labelColors="0xf4a339,0xfedcaf,0xe0e0e0"/>
+			    <ComboBox skin="png.guidecomp.combobox" var="combGuanKa" width="161" height="23" scrollBarSkin="png.guidecomp.vscroll" visibleNum="15" itemColors="0x262626,0xffe0ce,0xff861a,0x885202,0x3d3d3d" labelColors="0xf4a339,0xfedcaf,0xe0e0e0" x="-15" y="2"/>
+			    <ComboBox skin="png.guidecomp.combobox" var="combGuanKaState" width="61" height="23" scrollBarSkin="png.guidecomp.vscroll" visibleNum="15" itemColors="0x262626,0xffe0ce,0xff861a,0x885202,0x3d3d3d" labelColors="0xf4a339,0xfedcaf,0xe0e0e0" x="153" y="1" labels="退出,进入"/>
 			  </Box>
 			</View>;
 		public function LMListItemUI(){}

@@ -30,6 +30,7 @@ package com.cyj.app.view.modules
 			_bindList.push(new BindData(inputLevel, "value"));
 			_bindList.push(new BindData(inputEvent, "value"));
 			_bindList.push(new BindData(inputEndSendEvent, "endSendEvent"));
+			_bindList.push(new BindData(combGuanKaState, "value2", "selectedIndex"));
 			
 			combType.selectHandler = new Handler(handleTypeChange);	
 			handleTypeChange(combType.selectedIndex);
