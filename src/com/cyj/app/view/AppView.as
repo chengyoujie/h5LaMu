@@ -642,6 +642,7 @@ package com.cyj.app.view
 		{
 			var obj:Object = JSON.parse(jsonstr);
 			var ladata:Object = obj.data;
+			var outdata:Array = [];
 			if(ladata)
 			{
 				for(var item:String in ladata)
@@ -649,7 +650,6 @@ package com.cyj.app.view
 					var idata:Object = ladata[item];
 					if(idata.type == LaMuItemData.TYPE_NOTUSE)
 					{
-						delete ladata[item];
 						continue;
 					}
 					delete idata["name"];//编辑器中用到的字段	
@@ -682,8 +682,11 @@ package com.cyj.app.view
 							}
 						}
 					}
+					
+					outdata.push(ladata[item]);
 				}
 			}
+			obj.data = outdata;
 			thinNoData(obj);
 			return JSON.stringify(obj);
 		}
