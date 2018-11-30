@@ -41,6 +41,7 @@ package com.cyj.app.data.lamu
 		public var showFace:Boolean;
 		public var faceLeft:Boolean;
 		public var faceImg:String;
+		public var delay:int;
 		
 		
 		public function LaMuUnitData()

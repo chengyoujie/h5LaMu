@@ -619,7 +619,7 @@ package com.cyj.app.view
 			var byte:ByteArray = res.data;
 			var str:String= JSON.stringify(ToolsApp.curProjectData.curLaMu);
 			var thinData = thinData(str);
-			var testByte:ByteArray = ConfigParserUtils.writeStroy(byte, thinData);
+			var testByte:ByteArray = ConfigParserUtils.writeStroy(byte, thinData, ToolsApp.curPorjectConfig.filename);
 			testByte.position = 0;
 //			ConfigParserUtils.parser(testByte);
 			ToolsApp.file.saveByteFile(ToolsApp.curPorjectConfig.bindata, testByte);
@@ -647,6 +647,11 @@ package com.cyj.app.view
 				for(var item:String in ladata)
 				{
 					var idata:Object = ladata[item];
+					if(idata.type == LaMuItemData.TYPE_NOTUSE)
+					{
+						delete ladata[item];
+						continue;
+					}
 					delete idata["name"];//编辑器中用到的字段	
 					var steps:Object = idata.steps;
 					if(steps)

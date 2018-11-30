@@ -14,6 +14,7 @@ package com.cyj.app
 	import com.cyj.utils.XML2Obj;
 	import com.cyj.utils.cmd.CMDManager;
 	import com.cyj.utils.cmd.CMDStringParser;
+	import com.cyj.utils.file.CSVFile;
 	import com.cyj.utils.file.FileManager;
 	import com.cyj.utils.ftp.SimpleFTP;
 	import com.cyj.utils.load.LoaderManager;
@@ -87,9 +88,127 @@ package com.cyj.app
 //				
 //			return;//test
 			
+			//数据解析
+//			loader.loadSingleRes("D:/testsave/cdnfxbak.51aiwan.com/resource/output_69811c25.json", ResLoader.TXT, handleJsonData);
+//			return;
+			
 			loader.loadSingleRes("res/config.xml", ResLoader.TXT, handleConfigLoaded, null, handleLoadError);
 		}
 		
+		
+		private static function handleJsonData(res:ResData):void
+		{
+			var json:String = res.data;
+			var jsdata = JSON.parse(json);
+			for(var key:String in jsdata)
+			{
+				var item = jsdata[key];
+				var top:Array = [];
+				var data:Array = [];
+				var dataindex:int = 0;
+				var singleitems:Array = [];
+				
+				
+				
+				//给索引排序
+				var midindex = -1;
+				for(var mid  in item)
+				{
+					var subitem = item[mid];
+					
+					
+					
+					data[dataindex] = [];
+					for(var m in subitem)
+					{
+						var index:int = top.indexOf(m); 
+						if(index == -1)
+						{
+							top.push(m);
+							index = top.length-1;
+							
+							if(subitem[m] && mid == subitem[m])
+							{
+								midindex = index;
+							}
+						}
+					}
+				}
+//				top.sort();
+				if(midindex !=-1 && top.length >0)
+				{
+					var temp = top[midindex];
+					top.splice(midindex);
+					top.sort(sortOrder);
+					top.unshift(temp);
+				}else{
+					top.sort(sortOrder);
+					
+				}
+				
+				
+				
+				
+				for(var mid  in item)
+				{
+					var subitem = item[mid];
+					
+					if(subitem is Number || subitem is String || subitem is Boolean)
+					{
+						singleitems.push([mid, subitem]);
+						continue;
+					}
+					
+					data[dataindex] = [];
+					for(var m in subitem)
+					{
+						var index:int = top.indexOf(m); 
+						if(index == -1)
+						{
+							top.push(m);
+							index = top.length-1;
+						} 
+						var dm = subitem[m];
+						if(dm is Number || dm is String || dm is Boolean)
+						{
+							data[dataindex][index] = subitem[m];
+						}else{
+							data[dataindex][index] = JSON.stringify(subitem[m]);
+						}
+					}
+					dataindex ++;
+				}
+				data.unshift(top);
+				if(singleitems.length>0)
+				{
+					data.push(["=============单个数据==========="]);
+					data = data.concat(singleitems);
+				}
+				file.saveFile("D:/feixian/output_69811c25/"+key+".csv", CSVFile.write(data), false, "gb2312");
+				trace("保存文件:"+"D:/feixian/"+key+".csv");
+			}
+		}
+		
+		private static function sortOrder(a:String, b:String)
+		{
+			var aorder = getOrder(a);
+			var border = getOrder(b);
+			if(a>b)aorder = aorder+100;
+			return aorder>border?-1:1;
+			
+		}
+		
+		private static function getOrder(name:String):Number
+		{
+			if(name == "id")return 200000;
+			if(name.indexOf("id")!=-1)return 100000;
+			if(name.indexOf("name")!=-1)return 9999;
+			if(name.indexOf("type")!=-1)return 8888;
+			if(name.indexOf("icon")!=-1)return 7777;
+			if(name.indexOf("sort")!=-1)return 6666;
+			return 100;
+			
+		}
 		
 		//test
 //		private static var data1:ByteArray;//花千骨

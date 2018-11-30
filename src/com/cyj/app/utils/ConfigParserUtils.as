@@ -69,9 +69,9 @@ package com.cyj.app.utils
 			return cfgs;
 		}
 		
-		private static const KEY:String = "story";
+//		private static const KEY:String = "story";
 		
-		public static function writeStroy(oldByte:ByteArray, stroyJson:String):ByteArray
+		public static function writeStroy(oldByte:ByteArray, stroyJson:String, KEY:String):ByteArray
 		{
 			var newbyte:ByteArray = new ByteArray();
 			var finded:Boolean = false;

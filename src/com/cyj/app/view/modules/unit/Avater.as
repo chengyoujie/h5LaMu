@@ -191,7 +191,7 @@ package com.cyj.app.view.modules.unit
 			if(faceData == null)return;
 			_frameIndex ++;
 			if(_frameIndex>=faceData.length)_frameIndex=0;
-			var data:Array = faceData[_frameIndex];
+			var data:Array = faceData[_frameIndex] as Array;
 			if(data == null)return;
 			ShareUtils.MATRIX.identity();
 //			ShareUtils.MATRIX.scale(scale, 1);

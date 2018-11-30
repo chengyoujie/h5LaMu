@@ -70,6 +70,7 @@ package com.cyj.app.view.modules
 			_bindUnitList.push(new BindData(checkUnitShowFace, "showFace", "selected",handleCheckShowFace ));
 			_bindUnitList.push(new BindData(inputUnitFace, "faceImg", "text",handleCheckShowFace));
 			_bindUnitList.push(new BindData(checkFaceLeft, "faceLeft", "selected",handleCheckShowFace));
+			_bindUnitList.push(new BindData(inputUnitDelay, "delay"));
 			 
 			combCoordinate.selectHandler = new Handler(handleCoordinateChange);
 			combCameraOper.selectHandler= new Handler(handleCameraOperChange);

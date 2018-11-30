@@ -106,6 +106,10 @@
       <Label text="坐骑：" styleSkin="png.comp.label" layer="1" color="0x996600" y="59" x="1"/>
       <TextInput skin="png.guidecomp.textinput_文字输入底框_2" x="37" layer="1" color="0xff9900" width="69" height="23" sizeGrid="5,5,5,5,1" var="inputUnitMount" multiline="false" wordWrap="false" text="0" y="58"/>
     </Box>
+    <Box layers="1,1,0,0,第 1 层" layer="1" x="204" y="258" var="boxDealy">
+      <Label text="延迟(ms)：" styleSkin="png.comp.label" layer="1" color="0x996600" y="1"/>
+      <TextInput skin="png.guidecomp.textinput_文字输入底框_2" x="51" layer="1" color="0xff9900" width="81" height="23" sizeGrid="5,5,5,5,1" var="inputUnitDelay" multiline="false" wordWrap="false" text="0" restrict="-0-9"/>
+    </Box>
   </Box>
   <Image skin="png.guidecomp.line" x="0" y="343" layer="4" width="350"/>
   <Button label="上一中心点" skin="png.guidecomp.btn_小按钮_1" x="274" layer="4" labelColors="0xc79a84,0xe0a98d,0x93827a" var="btnStepLastPos" labelStroke="0" width="64" height="31" y="81"/>

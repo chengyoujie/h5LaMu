@@ -59,6 +59,8 @@ package com.cyj.app.view.ui.laMuUI {
 		public var inputUnitWeapon:TextInput = null;
 		public var inputUnitWing:TextInput = null;
 		public var inputUnitMount:TextInput = null;
+		public var boxDealy:Box = null;
+		public var inputUnitDelay:TextInput = null;
 		public var btnStepLastPos:Button = null;
 		protected static var uiXML:XML =
 			<View width="350" height="800" var="boxHeadImageSet">
@@ -168,6 +170,10 @@ package com.cyj.app.view.ui.laMuUI {
 			      <TextInput skin="png.guidecomp.textinput_文字输入底框_2" x="37" color="0xff9900" width="69" height="23" sizeGrid="5,5,5,5,1" var="inputUnitWing" multiline="false" wordWrap="false" text="0" y="31"/>
 			      <Label text="坐骑：" color="0x996600" y="59" x="1"/>
 			      <TextInput skin="png.guidecomp.textinput_文字输入底框_2" x="37" color="0xff9900" width="69" height="23" sizeGrid="5,5,5,5,1" var="inputUnitMount" multiline="false" wordWrap="false" text="0" y="58"/>
+			    </Box>
+			    <Box x="204" y="258" var="boxDealy">
+			      <Label text="延迟(ms)：" color="0x996600" y="1"/>
+			      <TextInput skin="png.guidecomp.textinput_文字输入底框_2" x="51" color="0xff9900" width="81" height="23" sizeGrid="5,5,5,5,1" var="inputUnitDelay" multiline="false" wordWrap="false" text="0" restrict="-0-9"/>
 			    </Box>
 			  </Box>
 			  <Image skin="png.guidecomp.line" x="0" y="343" width="350"/>

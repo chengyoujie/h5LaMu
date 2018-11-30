@@ -20,7 +20,7 @@ package com.cyj.app.view.ui.laMuUI {
 			<View width="365" height="110">
 			  <Image skin="png.guidecomp.内框_圆角2" width="365" height="110" sizeGrid="10,10,10,10,1" x="0" y="0"/>
 			  <TextInput skin="png.guidecomp.textinput_3" x="40" y="12" width="86" height="30" var="inputID" restrict="0-9" margin="8,5,2,2" color="0xff9900"/>
-			  <ComboBox skin="png.guidecomp.combobox" x="43" y="50" width="79" height="23" var="combType" itemColors="0x262626,0xffe0ce,0xff861a,0x885202,0x3d3d3d" labelColors="0xf4a339,0xfedcaf,0xe0e0e0" scrollBarSkin="png.guidecomp.vscroll" labels="任务,等级,事件,关卡"/>
+			  <ComboBox skin="png.guidecomp.combobox" x="43" y="50" width="79" height="23" var="combType" itemColors="0x262626,0xffe0ce,0xff861a,0x885202,0x3d3d3d" labelColors="0xf4a339,0xfedcaf,0xe0e0e0" scrollBarSkin="png.guidecomp.vscroll" labels="任务,等级,事件,关卡,其他,无用"/>
 			  <Label text="类型" x="10" y="52" color="0xff9900"/>
 			  <Label text="ID" x="10" y="18" color="0xff9900"/>
 			  <Box x="144" y="50" var="boxLevel" mouseEnabled="false">
