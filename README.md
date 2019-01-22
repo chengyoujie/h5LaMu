@@ -36,26 +36,33 @@ use as3 air make out json tools
 \\192.168.2.50\ftp\tool\H5拉幕工具v1.0.4.rar
 
 
-
+```
 ---projects.config
 <config>
 <project 
-	name="H5—观海策"
-	id="ghc"
-	path="D:/workspace_h5_git/ghc/client/resource/story_2.json"
-	baseurl="http://192.168.2.50:60200/"
-	gameurl="http://192.168.2.50:60290/"
-	jsoncopyto="\\192.168.2.50\h5_{$id}\cfgs\cn\raw\client\story.json"
+	name="H5—轩辕剑2"
+	id="xuanyuanjian2"
+	filename="story"
+	path="D:/剧情编辑器数据/{$name}/{$filename}.json"
+	baseurl="http://192.168.2.50:61000/"
+	gameurl="http://192.168.2.50:61090/"
+	jsoncopyto="\\192.168.2.50\h5_{$id}\cfgs\cn\raw\story\{$filename}.json"
+	jsonpublishto="\\192.168.2.50\h5_{$id}\cfgs\cn\raw\client\{$filename}.json"
 	bindata = "\\192.168.2.50\h5_{$id}\cfgs\cn\cfgs\client\cfgs.bin"
 	
 	resurl="{$baseurl}res/cn/"
 	monstercfg="{$baseurl}cfgs/cn/cfgs/server/GuaiWu.jat"
 	chengjiucfg="{$baseurl}cfgs/cn/cfgs/server/ChengJiu.jat"
+	zhuxiancfg="{$baseurl}cfgs/cn/cfgs/server/ZhuXianRenWu.jat"
 	mappath="{$baseurl}res/cn/m/"
 	facepath="{$baseurl}res/cn/face/"
 	mainroleindex="1"
 	mainface="big_0"
-	actionlist="0.站立,1.行走,2.怪物攻击1,3.怪物攻击2,4.死亡,5.受伤,7.剑上飞行,8.攻击动作1,9.攻击动作2,10.攻击动作3(前刺),11.攻击动作4,12.起跳,13.冲刺,14.降落,15.跳跃2"
-/>
+	actionlist="0.站立,1.行走,2.怪物攻击1,3.怪物攻击2,4.死亡,5.受伤,7.剑上飞行,8.攻击动作1,9.攻击动作2,10.攻击动作3(前刺),11.攻击动作4,12.起跳,13.冲刺,14.降落,15.跳跃2"/>
+
+	
+</config>
 
 </config>
+
+```
