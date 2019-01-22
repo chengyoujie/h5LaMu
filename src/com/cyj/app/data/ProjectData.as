@@ -18,8 +18,10 @@ package com.cyj.app.data
 		public var mapInfos:Object;
 		
 		public var monsterData:Object;
-		public var chengJiuData:Array;
-		public var chengJiuIdDic:Dictionary;
+		private var chengJiuData:Array;
+		private var chengJiuIdDic:Dictionary;
+		private var zhuXianData:Array;
+		
 		private var _pstCfgs:Object;
 		private var _aniCfgs:Object;
 		
@@ -86,12 +88,52 @@ package com.cyj.app.data
 		}
 		
 		
+//		private var _zhuxianIndex2Id:Dictionary;
+//		private var _zhuxianId2Index:Dictionary;
+		public function initZhuXianList(data:Array):void
+		{
+			this.zhuXianData = data?data:[];
+			var item:Object;
+			var zhuxianye = cfgs["ZhuXianYe"];
+			for(var i:int=0; i<zhuXianData.length; i++)
+			{
+				item = zhuXianData[i];
+				if(!item)continue;
+				item.id = item.order;
+				var ye = zhuxianye[item.type];
+				if(ye)
+				{
+					item.name = getTaskDes(ye.type,ye.des, item.data)
+				}else{
+					item.name = "";
+				} 
+//				_zhuxianId2Index[item.order] = i;
+//				_zhuxianIndex2Id[i]= item.order;
+			}
+		}
+//		
+//		public function getZhuXianIndexById(id:int):int
+//		{
+//			return _zhuxianId2Index[id];
+//		}
+//		public function getZhuXianIdByIndex(index:int):int
+//		{
+//			return _zhuxianIndex2Id[index];
+//		}
+		public function get zhuXianArray():Array
+		{
+			return this.zhuXianData;
+		}
+		
+		
+		
 		private var _taskList:Array;
 		private var _taskIndex2Id:Dictionary;
 		private var _taskId2Index:Dictionary;
 		public var taskDataSource:Array;
-		public function initTaskList():void
+		public function initTaskList(data:Array):void
 		{
+			this.chengJiuData = data;
 			_taskList = [];
 			_taskIndex2Id  = new Dictionary();
 			_taskId2Index = new Dictionary();

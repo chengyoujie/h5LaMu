@@ -12,6 +12,7 @@ package com.cyj.app.config
 //		public var cfgpath:String;
 		public var monstercfg:String;
 		public var chengjiucfg:String;
+		public var zhuxiancfg:String;
 		public var mappath:String;
 		public var actionlist:String;
 		public var gameurl:String;

@@ -172,8 +172,22 @@ package com.cyj.app.view
 			if(ProjectData.checkLaMuData(ProjectData.LAMU_DATA, false)==false)return;
 			var byte:ByteArray = res.data;
 			var chengjiu:Object = byte.readObject();
-			ToolsApp.curProjectData.chengJiuData = chengjiu as Array;
-			ToolsApp.curProjectData.initTaskList();
+			ToolsApp.curProjectData.initTaskList(chengjiu as Array);
+			
+			if(ToolsApp.curPorjectConfig.zhuxiancfg)
+				ToolsApp.loader.loadSingleRes(ToolsApp.curPorjectConfig.zhuxiancfg, ResLoader.BYT, handleParserZhuXianData, null, handleLoadError);
+			else
+				handleParserZhuXianData(null);
+		}	
+			
+		private function handleParserZhuXianData(res:ResData):void
+		{
+			if(res)
+			{
+				var byte:ByteArray = res.data;
+				var zhuxian:Object = byte.readObject();
+				ToolsApp.curProjectData.initZhuXianList(zhuxian as Array);
+			}
 			ToolsApp.loader.loadSingleRes(ToolsApp.curPorjectConfig.monstercfg, ResLoader.BYT, handleReadMonsterCfg);
 		}
 		

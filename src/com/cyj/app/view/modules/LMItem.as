@@ -27,6 +27,7 @@ package com.cyj.app.view.modules
 			
 //			_bindList.push(new BindData(combTask, "value", "selectedIndex"));
 			_bindList.push(new BindData(combState, "value2", "selectedIndex"));
+			_bindList.push(new BindData(combZhuXianState, "value2", "selectedIndex"));
 			_bindList.push(new BindData(inputLevel, "value"));
 			_bindList.push(new BindData(inputEvent, "value"));
 			_bindList.push(new BindData(inputEndSendEvent, "endSendEvent"));
@@ -36,6 +37,7 @@ package com.cyj.app.view.modules
 			handleTypeChange(combType.selectedIndex);
 			combTask.selectHandler = new Handler(handleTaskChange);
 			combGuanKa.selectHandler = new Handler(handleGuanKaChange);
+			combZhuXian.selectHandler = new Handler(handleZhuXianChange);
 		}
 		
 		override public function set dataSource(value:Object):void
@@ -51,6 +53,7 @@ package com.cyj.app.view.modules
 				_bindList[i].initData();
 			}
 			combTask.dataSource = ToolsApp.curProjectData.taskDataSource;
+			combZhuXian.dataSouceExt = ToolsApp.curProjectData.zhuXianArray;
 			combGuanKa.dataSouceExt = ToolsApp.curProjectData.guanKaData;
 			combType.selectedIndexFoce = _data.type;
 //			combTask.selectedIndexFoce = _data.
@@ -67,6 +70,7 @@ package com.cyj.app.view.modules
 			boxLevel.visible = index==LaMuItemData.TYPE_LEVEL;
 			boxEvent.visible = index == LaMuItemData.TYPE_EVENT;
 			boxGuanKa.visible = index == LaMuItemData.TYPE_GUANKA;
+			boxZhuXian.visible = index == LaMuItemData.TYPE_ZHUXIAN;
 			if(_data)
 			{
 				if(boxTask.visible)
@@ -82,6 +86,10 @@ package com.cyj.app.view.modules
 				}else if(boxGuanKa.visible)
 				{
 					combGuanKa.selectedIndex = combGuanKa.getIndexById(_data.value);
+				}else if(boxZhuXian.visible)
+				{
+					combZhuXian.selectedIndexFoce = combZhuXian.getIndexById(_data.value)//ToolsApp.curProjectData.getZhuXianIndexById(_data.value);
+					combZhuXianState.selectedIndexFoce = _data.value2;
 				}
 				_data.type = index;
 			}
@@ -93,6 +101,13 @@ package com.cyj.app.view.modules
 			if(_data == null)return;
 			if(index<0)return;
 			_data.value =  ToolsApp.curProjectData.getTaskIdByIndex(index);
+		}
+		
+		private function handleZhuXianChange(index:int):void
+		{
+			if(_data == null)return;
+			if(index<0)return;
+			_data.value = combZhuXian.getIdByIndex(index); //ToolsApp.curProjectData.getZhuXianIdByIndex((index);
 		}
 		
 		private function handleGuanKaChange(index:int):void

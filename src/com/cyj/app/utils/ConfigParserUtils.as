@@ -140,7 +140,7 @@ package com.cyj.app.utils
 //		};
 		private static function readCfg(cfgs:Object, key, NotUseCls:*=null, idkey=null, type:int=0):Object
 		{
-			var bytes:ByteArray = cfgs[key];
+			var bytes:ByteArray = cfgs[key] as ByteArray;
 			if(bytes==null)return null;
 			if (!idkey) { idkey = "id"; }
 			var struct = {};
@@ -319,6 +319,7 @@ package com.cyj.app.utils
 			readCfg(cfgs, "BaMen", 0, "id", 1);
 			readCfg(cfgs, "ZhaoHui", 0, "type", 1);
 			readCfg(cfgs, "YinDao", 0);
+			readCfg(cfgs,"ZhuXianYe", 0, "type");
 			return _result;
 		}
 		
@@ -398,6 +399,7 @@ package com.cyj.app.utils
 			readCfg(cfgs,"ZhongLiBoss", 0, "id", 1);
 			readCfg(cfgs,"GongNengYuGao", 0, "id", 1);
 			readCfg(cfgs,"TuiGuang", 0, "type");
+			readCfg(cfgs,"ZhuXianYe", 0, "type");
 			return _result;
 		}
 		
